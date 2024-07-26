@@ -15,7 +15,12 @@
 - Created redux store with slice
 - Implemented signout
 - Update profile API call
-- Fetch movies from TMDB
+- Bug fixes for auth
+- Unsubscribe for authstate change call to avoid event listeners hanging around
+- Add hardcoded values to constants file
+- Register from TMDB and go to documentation and Fetch movies from TMDB(https://developer.themoviedb.org/reference/movie-now-playing-list)
+- 
+
 
 
 # Features
