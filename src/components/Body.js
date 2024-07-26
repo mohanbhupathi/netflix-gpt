@@ -1,7 +1,7 @@
 import React from 'react'
 import Login from './Login'
 import Browse from './Browse'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { createBrowserRouter, RouterProvider, useNavigate } from 'react-router-dom'
 const Body = () => {
     const appRouter = createBrowserRouter([
         {
@@ -13,6 +13,7 @@ const Body = () => {
             element: <Browse />
         }
     ])
+    
     return (
         <div>
             <RouterProvider router={appRouter}/>
