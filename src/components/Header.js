@@ -7,12 +7,14 @@ import { useDispatch } from 'react-redux'
 import { onAuthStateChanged } from "firebase/auth"
 import { addUser, deleteUser } from '../utils/userSlice';
 import { bgImage } from '../utils/constants';
+import { toggleGPTSearchView } from '../utils/gptSlice';
 
 
 const Header = () => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const user = useSelector((store) => store.user)
+  const gptFlag = useSelector(store => store.gpt.showGPTSearch)
   useEffect(() => {
       const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -43,8 +45,12 @@ const Header = () => {
       // An error happened.
     })
   }
+
+  const handleGPTSearch = () => {
+    dispatch(toggleGPTSearchView())
+  }
   return (
-    <div className="header absolute px-8 py-2 bg-gradient-to-b from-black z-10 flex w-full justify-between">
+    <div className="header absolute px-8 py-2 bg-gradient-to-b from-black z-10 flex w-screen justify-between">
         <img
          className='w-44'
          src={bgImage}
@@ -52,11 +58,18 @@ const Header = () => {
          />
          {
           user ?
+            <div className='p-2 m-2'>
             <button 
-              className='font-bold text-white' 
+              className='font-bold text-white bg-purple-600 rounded-md px-4 py-2' 
+              onClick={handleGPTSearch}>
+              {!gptFlag ? "GPT Search" : "Home"}
+            </button> 
+            <button 
+              className='font-bold text-white p-2' 
               onClick={handleSignOut}>
               Sign Out
             </button> 
+            </div>
           : null
          }
     </div>

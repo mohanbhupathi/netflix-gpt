@@ -24,6 +24,7 @@
 - fetch data for trailer video
 - update stores with trailer video data
 - embedded the youtube video and make it autoplay and mute
+- Movie cards horizontal scroll(TNDB image cdn URL)
 
 
 
