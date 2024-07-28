@@ -19,7 +19,11 @@
 - Unsubscribe for authstate change call to avoid event listeners hanging around
 - Add hardcoded values to constants file
 - Register from TMDB and go to documentation and Fetch movies from TMDB(https://developer.themoviedb.org/reference/movie-now-playing-list)
-- 
+- Custom hook for now playing movies
+- Planning for Main container and secondary container
+- fetch data for trailer video
+- update stores with trailer video data
+- embedded the youtube video and make it autoplay and mute
 
 
 
